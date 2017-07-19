@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*定义动画*/
+			@-webkit-keyframes fly {
+				0% {
+					left: 100px;
+				}
+				30% {
+					left: 700px;
+					transform: rotate(30deg);
+				}
+				60% {
+					top: 400px;
+				}
+				100% {
+					left: 100; top: 100px;
+				}
+			}
+			div {
+				animation: fly 10s linear 0s 3 alternate forwards;
+				width: 60px;
+				height: 60px;
+				background: orange;
+				position: absolute;
+				top: 100px;
+				left: 100px;
+				/*transition: all 10s ease 0s;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <link rel="stylesheet" href="styles/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="styles/animate.min.css">
+</head>
+<body>
+    <div class="swiper-slide">
+		<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">内容</p>
+	</div>
+    
+    
+    <script src="scripts/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="scripts/swiper-3.4.2.jquery.min.js"></script>
+    <script src="scripts/swiper.animate1.0.2.min.js"></script>
+    <script type="text/javascript">       
+		  var mySwiper = new Swiper ('.swiper-container', {
+		  onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+		    swiperAnimateCache(swiper); //隐藏动画元素 
+		    swiperAnimate(swiper); //初始化完成开始动画
+		  }, 
+		  onSlideChangeEnd: function(swiper){ 
+		    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+		  } 
+		  })   
+    </script>
+</body>
+</html>

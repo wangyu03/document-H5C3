@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			img {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="AD02-ych320.jpg"/>
+		
+		
+		<script type="text/javascript">
+			//得到图片
+			var oImg = document.querySelector('img');
+			
+			//手指距离图片左上角的误差
+			var deltaX, deltaY;
+			//信号量
+			var nowX = 0;
+			var nowY = 0;
+			
+			//开始触摸
+			oImg.addEventListener('touchstart', function (event){
+			    event.preventDefault();
+		deltaX = event.touches[0].clientX;
+		deltaY = event.touches[0].clientY;
+			},false)
+			
+			//触摸移动时
+			oImg.addEventListener('touchmove', function(event) {
+				event.preventDefault();
+				//改变信号量
+				nowX = event.touches[0].clientX - 160;
+				nowY = event.touches[0].clientY - 160;
+				
+				console.log(event.clientX, event.clientY);
+				oImg.style.left = nowX + 'px';
+				oImg.style.top = nowY + 'px';
+			}, false)
+		</script>
+	</body>
+</html>

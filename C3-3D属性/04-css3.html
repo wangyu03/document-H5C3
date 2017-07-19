@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			body {
+				width: 1110px;
+				margin: 0 auto;
+			}
+			ul {
+				overflow: hidden;
+			}
+			li {
+				list-style: none;
+				width: 200px;
+				height: 200px;
+				float: left;
+				margin-left: 10px;
+				background: orange;
+				margin-top: 10px;
+			}
+			ul li:first-child {
+				margin-left: 0;
+			}
+			ul li:last-child {
+				background: red;
+			}
+			ul li:nth-child(3) {
+				background: orchid;
+			}
+			ul li:nth-child(4n) {
+				background: brown;
+			}
+			ul li:nth-child(4n+1) {
+				border: 3px solid crimson;
+			}
+			ul li:nth-child(2n+1) {
+				background: chartreuse;
+			}
+			ul li:nth-child(2n) {
+				background: sienna;
+			}
+			
+			section div {
+				width: 100px;
+				height: 100px;
+				margin: 5px;
+				float: left;
+			}
+			section div:nth-child(2) {
+				background: orangered;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		
+		<section>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</section>
+		<section>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</section>
+		<section>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</section>
+	</body>
+</html>

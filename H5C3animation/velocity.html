@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 500px;
+				height: 300px;
+				perspective: 400px;
+				border: 1px solid #000;
+			}
+			img {
+				border: 1px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" id="" value="biubiu" />
+		<div>
+			<img src="img/关羽.png"/>
+		</div>
+		
+		<script src="scripts/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="scripts/velocity.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	$('input').click(function() {
+//	    		$('img').velocity({"rotateZ": "40deg"}, 1000)
+//              $('img').velocity({"rotateY": "40deg"}, 1000)
+//              $('img').velocity({"rotateX": "40deg"}, 1000)
+//             $('img').velocity({"translateX": "400px"}, 1000)
+//             $('img').velocity({"translateY": "400px"}, 1000)
+//             $('img').velocity({"translateZ": "400px"}, 1000)
+//             $('body').velocity({'backgroundColor': "#123"}, 1000)
+               $('img').velocity({
+               	"rotateX": "40deg",
+               	"rotateY": "40deg",
+               	"translateZ": "100px",
+               }, 1000, function() {
+               	$(this).fadeOut();
+               });
+	    	});
+	    	
+	    </script>
+	</body>
+</html>

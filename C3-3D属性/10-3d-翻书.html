@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 300px;
+				height: 400px;
+				margin: 0 auto;
+				background: #87CEEB;
+				perspective: 600px;
+				position: relative;
+			}
+			div div {
+				position: absolute;
+			    top: 0;
+			    left: 0;
+			    width: 300px;
+			    height: 400px;
+			    border-left: 1px solid #A0522D;	
+			    background: #87CEEB;	
+			    transition: all 3s ease 0s;
+			    transform-origin: 0% 0px;	 
+			    backface-visibility: hidden;
+			    z-index: 10;
+			}
+			img {
+				position: absolute;
+			    top: 10px;
+			    left: 0;
+			    width: 280px;
+			    height: 380px;		
+			    transition: all 3s ease 0s;
+			    transform-origin: 0% 0px;	
+			    backface-visibility: hidden;    
+			}
+			div:hover div {
+				transition: all 2s ease 0s;
+				transform: rotateY(-180deg);
+			}
+			
+			div:hover img:nth-child(2) {
+				transition: all 9s ease 0s;
+				transform: rotateY(-180deg);
+			}
+			div:hover img:nth-child(3) {
+				transition: all 7s ease 0s;
+				transform: rotateY(-180deg);
+			}
+			div:hover img:nth-child(4) {
+				transition: all 5s ease 0s;
+				transform: rotateY(-180deg);
+			}
+			div:hover img:nth-child(5) {
+				transition: all 3s ease 0s;
+				transform: rotateY(-180deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div></div>
+			<img src="img/1.jpg"/>
+			<img src="img/2.jpg"/>
+			<img src="img/2a.png"/>
+			<img src="img/4.jpg"/>
+		</div>
+	</body>
+</html>

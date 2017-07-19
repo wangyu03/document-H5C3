@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 100px;
+				height: 100px;
+				background: red;
+				border-radius: 50%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+		
+		<script type="text/javascript">
+			var oCircles = document.querySelectorAll('.circle');
+			
+			var yuanxin = {a:300, b:300};
+			var r = 200;
+			var degree = 0
+			setInterval(function() {
+				degree += 5;
+				if (degree > 360) {
+					degree = 0;
+				}
+				go(degree);
+			}, 50);
+			
+//			设置一个角度的时候,盒子应该在的位置
+            function go(degree) {
+            	oCircle.style.left = yuanxin.a + r * Math.sin(degree2Red(degree)) + 'px';
+            	oCircle.style.top = yuanxin.b - r * Math.cos(degree2Red(degree)) + 'px';
+            }
+			
+			function degree2Red(degree) {
+				return degree * Math.PI / 180;
+			}
+		</script>
+	</body>
+</html>

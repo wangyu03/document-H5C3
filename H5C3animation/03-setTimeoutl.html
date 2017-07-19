@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		div {
+			width: 200px;
+			height: 200px;
+			background: coral;
+			transition: all 10s ease 0s;
+		}
+		</style>
+	</head>
+	<body>
+		
+		
+		
+		<script src="scripts/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	$("<div></div>").appendTo('body');
+	    	
+	    	setTimeout(function() {
+	    		$("div").css("width", 1000);
+	    	}, 1)
+	    </script>
+	
+	</body>
+</html>

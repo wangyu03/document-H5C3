@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			div {
+				width: 100%;
+			}
+			p:first-child {
+				float: left;
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+			p:nth-child(2) {
+				float: left;
+				width: 100%;
+				height: 100px;
+				background: aqua;
+				border: 5px solid #eee;
+				box-sizing: border-box;
+			}
+			p:last-child {
+				float: right;
+				width: 100px;
+				height: 100px;
+				background: saddlebrown;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>1</p>
+			<p>2</p>
+			<p>3</p>
+		</div>
+		
+		
+		<script type="text/javascript">
+			var oCenterP = document.querySelectorAll('p')[1];
+			window.onresize = set;
+			set();
+			function set() {
+				oCenterP.style.width = document.documentElement.clientWidth - 200 + 'px';
+			}
+			
+		</script>
+	</body>
+</html>

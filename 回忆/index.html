@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>	
+		<link rel="stylesheet" type="text/css" href="styles/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/animate.min.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/imagine.css"/>
+		<title>1704</title>
+	</head>
+	<body>
+		<div class="swiper-container">
+	      <div class="swiper-wrapper">
+	      	<!-- 第一页 -->
+	        <div class="swiper-slide">
+	        	<div class="index-1 ani" 
+        		swiper-animate-effect='fadeIn' 
+        		swiper-animate-duration='2s'>
+        		    <div class="imagine ani"
+        		    swiper-animate-effect='fadeIn' 
+	        		swiper-animate-duration='1s'
+	        		swiper-animate-delay='1s'>
+        		       <img src="imgs/g4_06.gif"/>
+        		    </div>
+	        		
+        		    <div class="life ani"
+        		    swiper-animate-effect='fadeIn' 
+	        		swiper-animate-duration='1s'
+	        		swiper-animate-delay='2s'>
+        		       <img src="imgs/g4_09.gif"/>
+        		    </div>
+	        		
+        		    <div class="starso-oceans ani"
+        		    swiper-animate-effect='fadeIn' 
+	        		swiper-animate-duration='1s'
+	        		swiper-animate-delay='3s'>
+	        		    <img src="imgs/g4_02.gif"/>
+        		    </div>
+        		    
+        		    <div class="person ani"
+        		    swiper-animate-effect='fadeIn' 
+	        		swiper-animate-duration='1s'
+	        		swiper-animate-delay='5s'>
+        		    </div>
+        		    
+        		    <div class="night-bg ani"
+        		    swiper-animate-effect='fadeIn' 
+	        		swiper-animate-duration='2s'
+	        		swiper-animate-delay='7s'>
+        		    	<img src="imgs/room-night.jpg"/>
+        		    </div>
+	        		
+	        		<div class="bird ani"
+	        		swiper-animate-effect='fadeIn' 
+	        		swiper-animate-duration='2s'
+	        		swiper-animate-delay='7s'>
+	        		  <div class="fly">
+	        		  	<img src="imgs/birg_03.gif"/>
+	        			<img src="imgs/birg_03.gif"/>
+	        			<img src="imgs/birg_03.gif"/>
+	        			<img src="imgs/birg_03.gif"/>
+	        			<img src="imgs/birg_03.gif"/>
+	        			<img src="imgs/birg_03.gif"/>
+	        			<img src="imgs/birg_03.gif"/>
+	        			<img src="imgs/birg_03.gif"/>
+	        		  </div>
+	        			
+	        		</div>
+	        		
+	        		<div class="whale ani"
+	        		swiper-animate-effect='fadeIn' 
+	        		swiper-animate-duration='2s'
+	        		swiper-animate-delay='7s'>
+	        			<img src="imgs/g4_03.gif"/>
+	        		</div>
+	        	</div>
+	        </div> 
+	        <!-- 第二页 -->
+	        <div class="swiper-slide">
+	        	<div class="index-2 ani infinite" 
+        		swiper-animate-effect='pulse' 
+        		swiper-animate-duration='2s'>
+	        		<img src="imgs/galaxy.jpg"/> 
+	        	</div>
+	        </div>
+	        <!-- 第三页 -->
+	       
+	        <!-- 第四页 -->
+	        
+	      </div>  
+	      <div class="swiper-pagination"></div>
+		</div>
+		<!--音乐播放-->
+		<div>
+			<audio src="imgs/music.mp3" autoplay loop></audio>
+			<div class="btn-music-on"></div>
+		</div>
+		
+		<script src="scripts/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="scripts/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="scripts/swiper.animate.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			// 播放音乐
+			var oAudio = document.querySelector('audio');
+			var oBtnMusic = document.querySelector('.btn-music-on');
+			oBtnMusic.addEventListener('click', function() {
+				if (oAudio.paused) {
+					oAudio.paused = false;
+					oAudio.play();
+					oBtnMusic.className = 'btn-music-on';
+					oBtnMusic.style.animationPlayState = 'running';
+				} else{
+					oAudio.paused = true;
+			        oAudio.pause();
+			        oBtnMusic.className = 'btn-music-on btn-music-off';
+			        oBtnMusic.style.animationPlayState = 'paused';
+				}
+			})
+			
+			// swiper 效果
+			var swiper = new Swiper('.swiper-container', {
+				pagination: '.swiper-pagination',
+				paginationClickable: true,
+				direction: 'vertical',
+				onInit: function(swiper) {
+					swiperAnimateCache(swiper);
+					swiperAnimate(swiper);
+				},
+				onSlideChangeEnd: function(swiper) {
+					swiperAnimate(swiper);
+				}
+			})
+		</script>
+	</body>
+</html>

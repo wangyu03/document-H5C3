@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+     		 perspective: 500px;
+	 	     overflow: hidden;
+		    }
+		    div {
+		      float: left;
+		      width: 150px;
+		      height: 150px;
+		      background-color: orange;
+		      margin-right: 10px;
+		</style>
+	</head>
+	<body>
+		<section>
+			<div></div>
+			<div></div>
+			<div></div>
+		</section>
+	</body>
+	
+	<script src="js/zeptoWithFxTouch.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    	$('div').on('touchstart', function() {
+    		$(this).css("background", "red");
+    	})
+    	
+    	$('div').on('swipeRight', function(event){
+	      event.preventDefault();
+	      $(this).animate({"rotate":"360deg"}, 3000, function(){
+	        $(this).css("rotate", "0deg");
+	      })
+	    });
+	    
+	    $('div').on('swipeleft', function(event){
+	      event.preventDefault();
+	      $(this).animate({"rotate":"-360deg"}, 3000, function(){
+	        $(this).css("rotate", "0deg");
+	      })
+	    });$("div").on("swiperight", function(event) {
+    		event.preventDefault();
+    		$(this).
+    	})
+    </script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			@-webkit-keyframes roll {
+				from {
+					left: 0px;
+				}
+				to {
+					left: -1600px;
+				}
+			}
+			.section {
+				width: 800px;
+				height: 260px;
+				margin: 100px auto;
+				border: 1px solid #B22222;
+				overflow: hidden;
+			    position: relative;
+			 }
+			.section div {
+				animation: roll 6s linear 0s infinite;
+				width: 4000px;
+				height: 260px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.section div:hover {
+				animation-play-state:paused;
+			}
+			img {
+				float: left;
+				width: 400px;
+				height: 260px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="section">
+			<div>
+				<img src="img/3.jpg"/>
+				<img src="img/4.jpg"/>
+				<img src="img/8.jpg"/>
+				<img src="img/9.jpg"/>
+				<img src="img/3.jpg"/>
+				<img src="img/4.jpg"/>
+				<img src="img/8.jpg"/>
+				<img src="img/9.jpg"/>
+			</div>
+		</div>
+	</body>
+</html>

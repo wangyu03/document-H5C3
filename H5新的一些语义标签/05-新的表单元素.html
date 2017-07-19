@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#menu {
+				display: none;
+				position: absolute;
+				background: #eee;
+			}
+		</style>
+	</head>
+	<body>
+		<form action=""  id="reg" method="get"></form>
+		用户名：<input type="text" name="username" form="reg"/>
+		年龄：<input type="number" min="18" max="40" step="1" id="age" name="age" form="reg"/>
+		邮箱：<input type="email" name="email" form="reg"/>
+		电话：<input type="tel" name="tel" pattern="^1[34578]\d{9}$" form="reg"/>
+		输入你的个人网页：<input type="url" form="reg"/>
+		生日：<input type="date" form="reg"/>
+		你喜欢的幸运色： <input type="color" form="reg" id="color"/>
+		
+		<input type="submit" value="提交" form="reg"/>
+		
+		<div id="menu">
+			<ul>
+				<li>饺子</li>
+				<li>为泉</li>
+				<li>博栋</li>
+			</ul>
+		</div>
+		
+		<script type="text/javascript">
+			var oAge = document.getElementById('age');
+			oAge.addEventListener('invalid', function(e) {
+				e.preventDefault();
+				console.log(1)
+			})
+			
+			var oColor = document.getElementById('color');
+			oColor.addEventListener('change', function() {
+//				console.log(this.value);
+				document.body.bgColor = this.value;
+			})
+			
+			var oMenu = document.getElementById('menu');
+			document.addEventListener('contextmenu', function(e) {
+				e.preventDefault();
+				oMenu.style.display="block";
+				oMenu.style.left = e.clientX + 'px';
+				oMenu.style.top = e.clientY + 'px';
+			})
+		</script>
+	</body>
+</html>

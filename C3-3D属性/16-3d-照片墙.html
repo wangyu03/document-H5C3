@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			body {
+				background: black;
+				color: #ccc;
+				cursor: pointer;
+			}
+			img {
+				width: 200px;
+				height: 200px;
+			}
+			.stage {
+				width: 800px;
+				height: 400px;
+				border: 1px solid #000000;\n
+				margin: 0 auto;
+				perspective: 900px;
+			}
+			.stage .unit {
+				width: 800px;
+				height: 400px;
+				position: relative;
+				transform-style: preserve-3d;
+				transition: all 1s ease 0s; 
+			}
+			.unit ul {
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>请滚动滚轮</h1>
+		<div class="state">
+			<div class="unit">
+				<ul>
+					<li><img src="img/1.jpg"/></li>
+					<li><img src="img/11.jpg"/></li>
+					<li><img src="img/2a.png"/></li>
+					<li><img src="img/2.jpg"/></li>
+					<li><img src="img/3.jpg"/></li>
+					<li><img src="img/4.jpg"/></li>
+					<li><img src="img/5.jpg"/></li>
+					<li><img src="img/6.jpg"/></li>
+					<li><img src="img/7.jpg"/></li>
+					<li><img src="img/8.jpg"/></li>
+				</ul>
+			</div>
+		</div>
+		<script src="scripts/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var $unit = $('.unit');
+		
+			$('.unit ul li').each(function(i) {
+				$(this).css('transform', 'rotateY('+(40*i+'deg) translateZ(400px)');
+			})
+			
+			var nowdegree = 0;
+			var lock = true;
+		    $('.stage').onmousewheel(function(event,delta){ 
+		        if (!lock) {
+		        	return;
+		        }
+		        event.preventDefault();
+		        
+		        nowdegree -= delta * 40;
+		        
+		        $(this).css('transform', 'rotateY('+ nowdegree +'deg translateZ(400px)');
+		        
+		        lock = false;
+		        
+		        setTimeout(function(){
+		        	lock = true;
+		        },1000)
+		    })
+		    
+		    var startX;
+		    var startY;
+		    $(document).mousedown(function(event) {
+		    	startX = event.clientX;
+		    	startY = event.clientY;
+		    	$unit.css('transition', 'none');
+		    	
+		    	$(document).mousemove(function(event){
+		    		var deltaX = event.clientX - startX;
+		    		var deltaY = event.clientY - startY;
+		    		
+		    		$unit.css('transform', 'rotateY('+ -deltaX/5 +'deg) rotateY('+ -deltaZ/5 +'deg)');
+		    	})
+		    	
+		    })
+		</script>
+	</body>
+</html>

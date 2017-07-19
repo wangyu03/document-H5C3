@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 500px;
+				height: 500px;
+				background: #ccc;
+				perspective: 600px;
+				position: relative;
+			}
+			img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				backface-visibility: hidden;
+				transition: all 10s ease 0s; 
+			}
+			img:nth-child(1) {
+				transform: rotateX(-180deg);
+			   
+			}
+			div:nth-child(1):hover img:nth-child(1) {
+				transform: rotateX(0deg);
+			}
+			div:nth-child(1):hover img:nth-child(2) {
+				transform: rotateX(180deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="">
+			<img src="img/6.jpg"/>
+			<img src="img/7.jpg"/>
+		</div>
+	</body>
+</html>

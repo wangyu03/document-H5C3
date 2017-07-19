@@ -1,0 +1,452 @@
+html, body {
+	height: 100%;
+	font: 400 15px/1.5 Tahoma,"Lucida Grande",Verdana,"Microsoft Yahei",STXihei,hei;
+}
+/*兼容火狐-moz, 谷歌-webkit ,后面常有*/
+body {
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: none;
+    -moz-user-select: none;
+    margin: 0 auto;
+    background: #f2f2f2;
+}
+body, a {
+	color: #000;
+}
+a {
+	text-decoration: none;
+}
+.search-index, body {
+    min-width: 320px;
+    max-width: 540px;
+}
+/*搜索框,固定定位*/
+.search-index {
+	position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 12;
+    width: 100%;
+    height: 3.21rem;
+    padding: 7px 3.57rem 7px 8px;
+    background-color: #F6F6F6;
+    border-bottom: 1px solid #CCC;
+    border-top: 1px solid #CCC;
+    -webkit-transform: translateX(-50%); 
+    transform: translateX(-50%);
+    box-sizing: border-box;
+}
+/*搜索框样式*/
+.search-index div.soso {
+	overflow: hidden;
+    height: 1.72rem;
+    padding: 0 5px;
+    line-height: 1.72rem;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #666;
+    font-size: .86rem;
+    border: 1px solid #999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+/*搜索框默认文字*/
+.search-index div.soso>span {
+    position: relative;
+    padding-left: 20px;
+    border: none;
+    outline: none;
+}
+/*搜索框小放大镜*/
+.search-index div.soso>span:after {
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+    content: "";
+    background: url(../img/un_ico_home_v620.png) no-repeat;
+    background-position: -60px -280px;
+    background-size: 104px 328px;
+}
+/*我的携程*/
+.search-index .myctrip { 
+	position: absolute;
+	top: 0;
+    right: 4px;
+    width: 44px;
+    height: 44px;   
+}
+/*携程小头像*/
+.search-index .myctrip::before {
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    margin-left: -10px;
+    width: 24px;
+    height: 26px;
+    background: url(../img/un_ico_home_v620.png) no-repeat;
+    background-position: -59px -195px;
+    background-size: 104px 328px;
+    content: "";
+}
+.search-index .myctrip span {
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: .86rem;
+    color: #2EAAE0;
+}
+/*轮播图 ，用的swiper*/ 
+header.jsmodule {
+	position: relative;
+	overflow: hidden;
+    width: 100%;
+    min-height: 64px;
+    padding-top: 45px;
+    background: #f2f2f2;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+.mkt-ad-ccc, .cm-slide {
+	position: relative;
+	overflow: hidden;
+	height: 82px;
+}
+.swiper-container { 
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.swiper-slide {
+	font-size: 18px;
+	text-align: center;
+	background: #000;
+}
+.swiper-slide img {
+	width: 100%;
+	height: 100%;
+}
+.swiper-pagination {
+	bottom: 0;
+	right: 0;
+}
+.swiper-pagination-bullet {
+    margin-right: 4px;
+}
+/*导航页面*/
+.nav-entry {
+    padding: 4px;
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+.nav-entry .row {
+    margin-bottom: 4px;
+    height: 6rem;
+}
+/*采用多兰多列布局*/
+/*兼容IE-ms, 谷歌-webkit ,后面常有*/
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+/*采用盒子模型border-box*/
+.row, .col {
+	box-sizing: border-box;
+}
+.col, .row {
+    width: 100%;
+}
+.nav-entry .col {
+	position: relative;
+	height: 100%;
+    border-left: 1px solid #fff;   
+}
+/*兼容IE-ms, 谷歌-webkit ,后面常有*/
+.col-33, .col-34 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33.3333%;
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+}
+.nav-entry .col:nth-child(1) {
+    border-left: none;
+}
+.nav-entry .col {
+	position: relative;
+	height: 100%;
+    border-left: 1px solid #fff;   
+}
+/*都是序选择器*/
+/*都是nav里标签的属性*/
+.nav-entry .row:nth-child(1) .col:first-of-type a, .nav-entry .row:nth-child(2) .col:first-of-type a, .nav-entry .row:nth-child(3) .col:first-of-type a {
+    height: 100%;
+}
+.nav-entry .row:nth-child(1) .col a {
+    background-color: #ff697a;
+}
+.nav-entry .row:nth-child(2) .col a {
+    background-color: #3d98ff;
+}
+.nav-entry .row:nth-child(3) .col a {
+    background-color: #44c522;
+}
+.nav-entry .row:nth-child(4) .col a {
+    background-color: #f79720;
+}
+.nav-entry .col:first-of-type a {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.nav-entry .col>a {
+    display: block;
+    color: #fff;
+    text-shadow: 0 2px 1px rgba(0,0,0,.2);
+    line-height: 3rem;
+}
+.nav-entry .col>a {
+    position: relative;
+    overflow: hidden;
+}
+.nav-entry .col a {
+    height: 50%;
+}    
+.nav-entry .col>a span {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: auto;
+	text-align: center;
+	line-height: 3rem;
+}
+/*size 尺寸是实际精灵图的一般*/
+/*同理图片位置尺寸只有实际的2分之一*/
+.nav-entry .col>a em {
+	display: block;
+	position: absolute;
+	left: 50%;
+	bottom: 6px;
+	width: 3rem;
+	height: 3rem;
+	margin-left: -1.5rem;
+	background: url(../img/un_ico_home_v620.png) no-repeat center;
+	background-position: 0px -130px;
+	background-size: 104px 328px;
+}
+.nav-entry .row:nth-child(2) .col>a em {
+	background: url(../img/un_ico_home_v620.png) no-repeat center;
+	background-position: 0px -297px;
+	background-size: 104px 328px;
+}
+.nav-entry .row:nth-child(3) .col>a em {
+	background: url(../img/un_ico_home_v620.png) no-repeat center;
+	background-position: 7px -180px;
+	background-size: 104px 328px;
+}
+/*导航子菜单*/
+/*兼容IE-ms, 谷歌-webkit ,后面常有*/
+.products {
+	padding: 0 4px;
+	font-size: 14px;
+    margin-bottom: 4px;
+}
+/*子菜单中3个ul*/
+/*采用多兰多列布局*/
+.products ul {
+	list-style: none;
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+/*flex的扩展量0,收缩量0,长度为25%*/
+.products ul li {
+	float: left;
+	-webkit-box-flex: 0;
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    width: auto;
+	max-width: 25%;
+	margin-bottom: 1px;
+	box-sizing: border-box;
+}
+/*序选择选择元素,修改个别值的属性*/
+.products ul:nth-child(1) li:nth-child(1) a{
+    border-top-left-radius: 5px;
+}
+.products ul:nth-child(1) li:nth-child(4) a{
+    border-top-right-radius: 5px;
+}
+.products ul:nth-child(3) li:nth-child(1) a{
+    border-bottom-left-radius: 5px;
+}
+.products ul:nth-child(3) li:nth-child(4) a{
+    border-bottom-right-radius: 5px;
+}
+.products ul li a {
+	position: relative;
+	display: block;
+	height: 26px;
+	padding-top: 34px;
+	margin-right: 1px;
+	background: #fff;
+	text-align: center;
+	overflow: hidden;
+}
+.products ul li a span {
+	position: absolute;
+    top: 11px;
+    left: 50%;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background: url(../img/un_ico_subnav_v7.5@2x.png) no-repeat;
+    background-size: 20px 315px;
+}
+/*序选择选择元素,修改个别值的属性*/
+.products ul:nth-child(1) li:nth-child(1) span {
+	background-position: 0px -80px;
+}
+.products ul:nth-child(1) li:nth-child(2) span {
+	background-position: 0px -292px;
+}
+.products ul:nth-child(1) li:nth-child(3) span {
+	background-position: 0px -120px;
+}
+.products ul:nth-child(1) li:nth-child(4) span {
+	background-position: 0px -140px;
+}
+.products ul:nth-child(2) li:nth-child(1) span {
+	background-position: 0px -160px;
+}
+.products ul:nth-child(2) li:nth-child(2) span {
+	background-position: 0px -180px;
+}
+.products ul:nth-child(2) li:nth-child(3) span {
+	background-position: 0px -200px;
+}
+.products ul:nth-child(2) li:nth-child(4) span {
+	background-position: 0px -220px;
+}
+.products ul:nth-child(3) li:nth-child(1) span {
+	background-position: 0px -20px;
+}
+.products ul:nth-child(3) li:nth-child(2) span {
+	background-position: 0px -261px;
+}
+.products ul:nth-child(3) li:nth-child(3) span {
+	background: url(../img/play56.png) no-repeat;
+    background-size: 20px 20px;
+}
+.products ul:nth-child(3) li:nth-child(4) span {
+	background-position: 0px -60px;
+}
+
+/*特卖汇*/
+section.special-selling {
+	width: 100%;
+	margin-bottom: 8px;
+	background: white;
+}
+.special-selling .hd, .hot-activies .hd {
+	position: relative;
+	height: 44px;
+	line-height: 44px;
+    padding: 0 8px;
+    background: #fff;
+    overflow: hidden;
+}
+.hd h3 {
+	padding-top: 44px;
+    height: 0;
+    overflow: hidden;
+}
+/*还是用的伪类*/
+.hd h3::after {
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 8px;
+	width: 79px;
+	height: 1rem;
+	margin-top: -0.5rem;
+	background: url(../img/un_home_text.png) no-repeat;
+	background-size: 79px 58px;
+	background-position: 0 0;
+	content: "";
+}
+/*热门活动 的icon*/
+.hot-activies .hd h3:after {
+	background-position: 0 -20px;
+}
+.special-selling .hd div, .hot-activies .hd div{
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	display: inline-block;
+	margin-top: -10px;
+	padding: 0 18px 0 12px;
+	height: 20px;
+	line-height: 20px;
+	border-radius: 10px;
+	font-size: 12px;
+    background: -webkit-linear-gradient(left,#ff4e63,#ff6cc9);
+    background: linear-gradient(to right,#ff4e63,#ff6cc9);   
+} 
+ .hd div::after {
+	position: absolute;
+    top: 6px;
+    right: 9px;
+    width: 7px;
+    height: 7px;
+    border: 2px solid #fff;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    content: "";
+}
+.hd div a {
+	color: white;
+}
+.special-selling .bd {
+	padding: 0 8px 8px;
+	width: 100%;
+	box-sizing: border-box;	
+}
+.special-selling .bd li:nth-child(1) {
+	float: left;
+	width: 50%;
+}
+.bd li .pic img {
+    width: 100%;
+    min-height: 117px;
+}
+.special-selling .bd li:nth-child(2) {
+	float: right;
+	width: 50%;
+}
+.special-selling .bd li:nth-child(3) {
+	float: right;
+	width: 50%;
+}
+@media (min-width: 376px) .special-selling .bd {
+    min-height: 209px;
+}
+
+/*更多活动*/
+section.hot-activies {
+	width: 100%;
+	margin-bottom: 8px;
+	background: white;
+}
+
+/*热门活动 的icon*/
+.hot-activies .hd h3:after {
+	background-position: 0 -20px;
+}

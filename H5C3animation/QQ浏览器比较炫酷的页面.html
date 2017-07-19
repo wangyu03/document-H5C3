@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			html, body {
+				height: 100%;
+			}
+			body {
+				background: #ccc;
+				perspective: 500px;
+			}
+			.inner_c {
+				width: 1000px;
+				height: 100%;
+				margin: 0 auto;
+				position: relative;
+			}
+			.inner_c .logo_stage {
+				width: 313px;
+				height: 46px;
+				perspective: 500px;
+			}
+			.inner_c .logo_stage .logo {
+				display: none;
+			}
+			.inner_c .h1_stage {
+				width: 880px;
+				height: 320px;
+			    background: url(img/qq/skin.png) no-repeat;
+			    margin: 0 auto;
+    		    perspective: 500px;
+				margin-top: 100px;
+			}
+			
+			.clock_stage {
+				width: 381px;
+				height: 381px;
+				perspective: 300px;
+			}
+			.clock_stage .clock {
+				width: 381px;
+				height: 381px;
+				position: relative;
+				perspective: 1500px;
+				transform-style: preserve-3d;
+				transform: rotateY(0deg);
+				display: none;
+			}
+			.clock_stage .clock .n1, .n2, .n3 .n4{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -190px;
+				margin-top: -190px;
+				width: 381px;
+				height: 381px;
+			}
+			.inner_c .banben{
+				position: absolute;
+				width: 316px;
+				height: 296px;
+				top: 50%;
+				left: 50%;
+				margin-left: -155px;
+				margin-top: -150px;
+				display: none;
+			}
+			.circles {
+				position: absolute;
+				top: 50%;
+				right: 10px;
+				margin-top: -100px;
+				width: 200px;
+			}
+			.circles ol {
+				list-style: none;
+			}
+			.circles ol li {
+				width: 20px;
+				height: 20px;
+				margin-bottom: 6px;
+				background: #333;
+				border-radius: 50%;
+			}
+			.circles ol li.cur {
+				background: skyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="inner_c">
+			<div class="logo_stage">
+				<img class="logo" src="img/qq/title2_1.png" alt="" />
+			</div>
+			<div class="h1_stage">
+			</div>
+			
+			<!--page1的元素-->
+			<div class="clock_stage">
+				<div class="clock">
+					<img src="img/qq/n1.png" alt="" class="n1" />
+					<img src="img/qq/n2.png" alt="" class="n1" />
+					<img src="img/qq/n3.png" alt="" class="n1" />
+					<img src="img/qq/n4.png" alt="" class="n1" />
+				</div>	
+			</div>
+			<div class="banben">
+				<img src="img/qq/47.png" alt="" />
+			</div>
+		</div>
+		<div class="circles">
+			<ol>
+				<li class="cur"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ol>
+		</div>
+		
+		
+		<script src="scripts/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="scripts/jquery-mousewheel.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="scripts/velocity.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+	    	//当前页面的信号量
+	    	var nowpage = 0;
+	    	//入场动画数组
+	    	var inAnimateArr = [function(){}, function(){}, function(){}, function(){}];
+	    	//出场动画数组
+	    	var outAnimateArr = [function(){}, function(){}, function(){}, function(){}];
+	    
+	        
+	        //在这里设计所有的进场，出场动画
+	        inAnimateArr[0] = function() {
+	        	console.log('0号进场')
+	        	$('.logo').show().velocity({
+	        		"rotateY": "180deg",
+	        		"rotateX": "360deg",
+	        		"translateZ": "500px"
+	        	},1000).velocity("reverse", 1000);
+	        	
+	$('.h1_stage').velocity({
+		"opacity": "1"
+	})
+	$('.h1_stage').show().velocity({
+		
+		"translateZ": "500px"
+	}, 0).delay(400).velocity("reverse", 1000, function() {
+		lock = true;
+	});
+	
+	$()	        }
+	        inAnimateArr[1] = function() {
+	        	console.log('1号进场')
+	        	$('.clock').show().velocity({
+			        "rotateY": "-180deg",
+			        "translateZ": "400px",
+			        "scale": '0.1'
+			      },0)
+			      .velocity({
+			        "rotateY": "0deg",
+			        "translateZ": "0px",
+			        "scale": 1
+			      }, 1000)
+			      .velocity({
+			        "translateZ": "500px"
+			      }, 600, function(){
+			        //让一个元素为下次动画做好准备
+			        $(this).velocity({"translateZ":"0"},0);
+			        $(this).hide();
+			        lock = true;
+			      });
+			      $('.banben').show().velocity({
+			        "scale": "0.001",
+			        "translateZ": '0'
+			      }, 0)
+			      .delay(1300)
+			      .velocity({
+			        "scale": 1
+			      }, 400);
+	        }
+	        inAnimateArr[2] = function() {
+	        	console.log('2号进场')
+	        	
+	        }
+	        inAnimateArr[3] = function() {
+	        	console.log('3号进场')
+	        	
+	        }
+	        outAnimateArr[0] = function() {
+	        	console.log('0号出场')
+	        	  $('.logo').fadeOut();
+			      $('.h1_stage').each(function(i){
+			        $(this).delay(i * 60).velocity({
+			          "translateZ": "500px"
+			        }, 400, function(){
+			          $(this).velocity({"translateZ":"0px", "opacity":0}, 0);
+			        });
+			      });
+	        }
+	        outAnimateArr[1] = function() {
+	        	console.log('1号出场')
+	        	$('.banben').hide();
+	        }
+	        outAnimateArr[2] = function() {
+	        	console.log('2号出场')
+	        	
+	        }
+	        outAnimateArr[3] = function() {
+	        	console.log('3号出场')
+	        	
+	        }
+	       
+	       //页面一开始就应该执行0号页面的入场动画
+	       inAnimateArr[0]();
+	       
+	      // 函数节流
+	      var lock = true;
+	      //鼠标滚轮事件监听
+	      $(document).mousewheel(function(event, delta) {
+	      	if (!lock) {
+	      		return;
+	      	}
+	      	event.preventDefault();
+	      	//备份一下老的信号量
+	      	var oldpage = nowpage;
+	      	nowpage -= delta;
+	      	if ( nowpage > 3 ) {
+	      		nowpage = 0;
+	      	} else if (nowpage < 0 ){
+	      		nowpage = 3;
+	      	}
+	      	//看看信号量是否有改变
+	      	if (oldpage != nowpage) {
+	      		//在动画数组中，调用响应的函数执行
+	      		//让上一页出场， 下一页进场
+	      		outAnimateArr[oldpage]();
+	      		inAnimateArr[nowpage]();
+	      	}
+	      	
+	      	//小圆点改变
+	      	$('.circles ol li').eq(nowpage).addClass('cur').siblings().removeClass();
+	      	
+	      	//函数节流
+	      	lock = false ;
+	      })
+	    
+	    </script>
+	</body>
+</html>

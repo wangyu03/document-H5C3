@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 500px;
+				height: 500px;
+				border: 1px solid #eee;
+				perspective: 500px;
+				margin: 100px auto;
+			}
+			img {
+				border: 1px solid coral;
+				transition: all 10s ease 0s;
+				transform: none;
+			}
+			div.fly img {
+				transform: rotateX(360deg) rotateY(360deg) translateX(100px) translateZ(100px);
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img src="img/2a.png"/>
+		</div>
+		
+		<input type="button" id="fly" value="飞的更高" />
+		
+		<script type="text/javascript">
+			var oFly = document.querySelector('#fly');
+			var oDiv = document.querySelector('div');
+			oFly.addEventListener('click', function() {
+				oDiv.className = 'fly';
+			})
+		</script>
+	</body>
+</html>

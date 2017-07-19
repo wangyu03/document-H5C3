@@ -1,0 +1,193 @@
+html, body {
+	height: 100%;
+	position: relative;
+}
+body {
+	background: #eee;
+	font-family: helvetica Neus, helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: #000;
+}
+.swiper-container { 
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.swiper-slide {
+	font-size: 18px;
+	text-align: center;
+	background: #000;
+}
+/*音乐播放*/
+@-webkit-keyframes music{
+	to {
+		transform: rotate(360deg);
+	}
+}
+.btn-music-on {
+	position: absolute;
+	background: url(../images/musicBtn.png) 50% 50% no-repeat;
+	padding: 40px;
+	z-index: 9999;
+    bottom: 0;
+	left: 0;
+	animation: music 5s infinite linear;
+}
+.btn-music-off {
+	background: url(../images/musicBtnOff.png) 50% 50% no-repeat;
+}
+/*第一页的内容*/
+.index-1 {
+	width: 100%;
+	height: 100%;
+	background: #e2e2e2;
+}
+.index-1 .imagine {
+	position: absolute;	
+	width: 175px;
+	height: 40px;
+	left: 50%;
+	margin-left: -87px;
+	margin-top: 35%;
+}
+.index-1 .life {
+	position: absolute;	
+	width: 175px;
+	height: 40px;
+	left: 50%;
+	margin-left: -87px;
+	margin-top: 50%;
+	
+}
+.index-1 .starso-oceans {
+	position: absolute;	
+	width: 418px;
+	height: 46px;
+	left: 50%;
+	margin-left: -209px;
+	margin-top: 65%;
+}
+.imagine img, .life img, .starso-oceans img {
+	width: 80%;
+}
+.person {
+	position: absolute;
+	width: 280px;
+	height: 280px;
+	top: 57%;
+	left: 50%;
+	margin-left: -140px;
+	z-index: 999;
+	background: url(../imgs/g2.png) no-repeat -650px 0;
+}
+.night-bg img {
+	position: absolute;
+	height: 100%;
+	left: -24%;
+	z-index: 100;
+}
+/*鸟*/
+@-webkit-keyframes fly{
+	0% {
+		left: 8%;
+		top: 0;
+	}
+	
+	100% { 
+		top: 30%;
+		left: 100%;
+	}
+}
+.bird .fly {
+	position: absolute;
+	animation: fly 4s infinite linear;
+	width: 28%;
+	height: 90px;
+}
+.bird {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	top: 0%;
+	left: 0%;
+} 
+.bird img {
+	position: absolute;
+}
+.bird img:nth-child(1) {
+	top: 65px;
+	left: 77px;
+}
+.bird img:nth-child(2) {
+	top: 45px;
+	left: 20px;
+}
+.bird img:nth-child(3) {
+	width: 30px;
+	top: 25px;
+	left: 10px;
+}
+.bird img:nth-child(4) {
+    width: 30px;
+	top: 45px;
+	left: 60px;
+}
+.bird img:nth-child(5) {
+	width: 20px;
+	top: 30px;
+	left: 50px;
+}
+.bird img:nth-child(6) {
+	width: 20px;
+	top: 15px;
+	left: 10px;
+}
+.bird img:nth-child(7) {
+	width: 25px;
+	top: 15px;
+	left: 15px;
+}
+.bird img:nth-child(8) {
+	width: 25px;
+	top: 25px;
+	left: 25px;
+}
+
+/*//whale*/
+@-webkit-keyframes exercise{
+	0%{ 
+		opacity: 0;
+		left: 100px;
+		top: -20px;
+		transform: rotate(-60deg);
+	}
+	20% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100%{
+		top: 100px;
+		left: 120%;
+		transform: rotate(0deg);
+	}
+}
+.whale img {
+	position: absolute;
+	width: 30%;
+	opacity: 0;
+	animation: exercise 8s infinite 6s;
+}
+
+/*第二页*/
+.index-2 {
+	width: 100%;
+	height: 100%;
+}
+.index-2 img {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+}

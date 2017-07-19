@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+	</head>
+	<body>
+		<div id="title"></div>
+		<script type="text/javascript">
+			var oTitle = document.querySelector('#title');
+			//触摸移动
+			document.addEventListener('touchstart', function (event){
+				event.preventDefault();
+				console.log(event)
+				oTitle.innerText = '你正在用' + event.touches.length + '根手指触摸屏幕';
+			}, false)
+			
+			//触摸移动
+			document.addEventListener('touchmove', function(event) {
+				//阻止默认事件
+				event.preventDefault();
+				oTitle.innerText = '';
+				var text = '';
+				for (var i = 0; i < event.touches.length; i++) {
+					text += event.touches[i].clientX 
+					+ '<br/>' 
+					+ event.touches[i].clientY 
+					+ '<br />';
+				}
+				oTitle.innerHTML = text;
+			}, false);
+			
+			//触摸结束
+			document.addEventListener('touchend', function(event) {
+				event.preventDefault();
+				oTitle.innerText = 'end结束了'
+			}, false)
+		</script>
+	</body>
+</html>

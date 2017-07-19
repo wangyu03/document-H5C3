@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	    <style type="text/css">
+	    	div[title] {
+	    		width: 100px;
+	    		height: 100px;
+	    		background: #eee;
+	    		margin-top: 100px;
+	    	}
+	    	div[title="zihao"] {
+	    		background: red;
+	    	}
+	    	[title^="z"] {
+	    		background: orange;
+	    	}
+	    	[title$="n"] {
+	    		background: orchid;
+	    	}
+	    	[title~="a"] {
+	    		/*需要内容有空格,并且是一个单独完整匹配*/
+	    		background: skyblue;
+	    	}
+	    	[title|="b"] {
+	    		background: cornflowerblue;
+	    	}
+	    	[title*="b"] {
+	    		background: palegreen;
+	    	}
+	    </style>
+	</head>
+	
+	<body>
+		<div title="zihao a" class="zh"></div>
+		<div title="changkun-b" class="ck"></div>
+		<div title="a jingwei" class="jw"></div>
+	    <div title="b-jingwei" class="jw"></div>
+	    
+	    <div class="a jy a"></div>
+	</body>
+</html>

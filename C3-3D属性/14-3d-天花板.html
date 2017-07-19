@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.stage {
+				width: 300px;
+				height: 300px;
+				margin: 100px auto;
+				perspective: 1500px;
+			}
+			.unit {
+				width: 300px;
+				height: 300px;
+				position: relative;
+			}
+			.unit img {
+				position: absolute;
+				width: 300px;
+				height: 300px;
+				top: 0;
+				left: 0;
+			}
+			.unit img.boy {
+				/*让这个人飘到天花板上*/
+				
+				transform: rotateX(90deg) translateZ(150px);
+			}
+			.unit img.girl {
+				transform: translateZ(150px);
+				z-index: 2;
+			}
+			.unit img.hua {
+				transform: translateZ(-150px);
+			}
+			.unit img.shuimu {
+				transform: rotateX(90deg) translateZ(-150px);
+			}
+			.unit img.kaola {
+				transform: rotateY(90deg) translateZ(-150px);
+			}
+			.unit img.qie{
+				transform: rotateY(90deg) translateZ(150px);
+			}
+			.unit {
+				transform-style: preserve-3d;
+				/*transform: rotateX(0deg);*/
+				transition: all 10s ease 0s;
+			}
+			.stage .unit:hover {
+				transform: rotateX(600deg) rotateY(-500deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="stage">
+			<div class="unit">
+				<img class="boy" src="img/Lighthouse.jpg"/>
+				<img class="girl" src="img/4.jpg"/>
+				<img class="hua" src="img/11.jpg"/>
+				<img class="shuimu" src="img/Jellyfish.jpg"/>
+				<img class="qie" src="img/Penguins.jpg"/>
+				<img class="kaola" src="img/Koala.jpg"/>
+			</div>
+		</div>
+	</body>
+</html>

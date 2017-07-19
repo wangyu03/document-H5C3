@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				
+			}
+			
+			@-webkit-keyframes drop{
+				0%{
+					opacity: 1;
+					transform: rotateZ(-10deg) translateX(0) translateY(0);
+				}
+				70%{
+					opacity: 0;
+					transform: rotateZ(30deg) translateX(300px) translateY(300px);
+				}
+				100%{
+					opacity: 0;
+					transform: rotateZ(30deg) translateX(300px) translateY(300px);
+				}
+			}
+			.leaf {
+				width: 90px;
+				height: 65px;
+				background: url(img/download.png) no-repeat 0 -150px;
+				position: absolute;
+				top: 100px;
+				left: 100px;
+				animation: drop 3s linear 0s infinite;
+			}
+			
+			
+			@-webkit-keyframes zhuan{
+				0%{
+					transform: rotate(0deg);
+				}
+				60%{
+					transform: rotate(360deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+			.triangle {
+				width: 170px;
+				height: 170px;
+				background: url(img/download.png) 0 -311px;
+				position: absolute;
+				top: 226px;
+				left: 100px;
+				animation: zhuan 2s ease 0s infinite;
+			}
+			.square {
+				width: 96px;
+				height: 96px;
+				background: url(img/download.png) 0 -215px;
+				position: absolute;
+				top: 300px;
+				left: 200px;
+				animation: zhuan 2s ease 0s infinite;
+			}
+			
+			@-webkit-keyframes twinkle{
+				0%{
+					opacity: 0;
+				}
+				80%{
+					opacity: 1;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			.lamp {
+				width: 191px;
+				height: 267px;
+				background: url(img/download.png) 0 -620px;
+				position: absolute;
+                left: 600px;
+                top: 200px;
+			}
+			.light {
+				width: 341px;
+				height: 256px;
+				background: url(img/download.png) 0 -887px;
+				position: absolute;
+				left: 600px;
+				top: 200px;
+				margin-left: -75px;
+				margin-top: -80px;
+				animation: twinkle 1s ease 0s infinite alternate;
+			}
+			
+			
+			
+			@-webkit-keyframes chandou {
+				from{
+					transform: none;
+				}
+				to{
+					transform: translate3d(-10px, -10px, 0 );
+				}
+			}
+			.rocket {
+				width: 430px;
+				height: 220px;
+				background: url(img/download.png) no-repeat -239px 0;
+				position: absolute;
+				top: 150px;
+				left: 900px;
+				animation: chandou 0.3s linear 0s infinite alternate;
+			}
+			 
+			@-webkit-keyframes yidong{
+				from{
+					transform: translate3d(1000px, -800px, 0);
+				}
+				to{
+					transform: translate3d(-1000px, 800px, 0 );
+				}
+			}
+			.line-one {
+				width: 156px;
+				height: 153px;
+				background: url(img/download.png) -239px -220px;
+				position: absolute;
+				left: 900px;
+				top: 150px;
+				animation: yidong 1s linear 0s infinite;
+			}
+			.line-two {
+				width: 75px;
+				height: 73px;
+				background: url(img/download.png) -165px -150px;
+				position: absolute;
+				left: 930px;
+				top: 180px;
+				animation: yidong 2s linear 0s infinite;
+			}
+			.line-three {
+				width: 156px;
+				height: 153px;
+				background: url(img/download.png) -239px -220px;
+				position: absolute;
+				left: 960px;
+				top: 290px;
+				animation: yidong 1s linear 0s infinite;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="leaf"></div>
+		<div class="triangle"></div>
+		<div class="square"></div>
+		<div class="lamp"></div>
+		<div class="light"></div>
+		<div class="rocket"></div>
+		<div class="line-one"></div>
+		<div class="line-two"></div>
+		<div class="line-three"></div>
+	</body>
+</html>

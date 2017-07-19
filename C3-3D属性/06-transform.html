@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+				background: cornflowerblue;
+			}
+			
+			img {
+				width:100px;
+			    padding:10px 10px 10px 10px;
+				background-color:#fff;
+				margin:10px 10px 10px 10px ;
+				
+			}
+			img:nth-child(1) {
+				transform: rotate(10deg);
+				transition: all 10s ease 0s; 
+			}
+			img:nth-child(1):hover {
+				transform: rotate(360deg);
+			}
+			img:nth-child(2) {
+				transform: rotate(-10deg);
+			}
+			img:nth-child(3) {
+				
+				transform: scale(0.3, 0.3);
+				transition: all 1s ease 0s; 
+			}
+			img:nth-child(3):hover {
+				transform: scale(1, 1);
+			}
+			img:nth-child(4) {
+				transform: skew(10deg, 20deg);
+				transition: all 3s ease 0s; 	
+			}
+			img:nth-child(4):hover {
+				transform: skew(0deg, 0deg);
+			}
+			img:nth-child(5) {
+				transform: rotate(10deg);
+			}
+			img:nth-child(6) {
+				border: 1px solid red;
+				transition: all 10s ease 0s; 
+				transform: rotate(-30deg) scale(2, .2) skew(50deg, 20deg);
+			}
+			img:nth-child(6):hover{
+				margin-top: 50px;
+				transform: scale(4, 4);
+			}
+			img:nth-child(7) {
+				transform: rotate(10deg);
+			}
+			img:nth-child(8) {
+				transform: rotate(-10deg);
+			}
+			img:nth-child(9) {
+				transform: rotate(10deg);
+			}
+			
+	                   
+		</style>
+	</head>
+	<body>
+		<img src="img/8.jpg" alt="后台正在加油~请耐心等待" "/>
+		<img src="img/9.jpg" alt="后台正在加油~请耐心等待" "/>
+		<img src="img/1.jpg" alt="后台正在加油~请耐心等待" ">
+		<img src="img/4.jpg" alt="后台正在加油~请耐心等待" ">
+		<img src="img/5.jpg" alt="后台正在加油~请耐心等待" />
+		<img src="img/7.jpg" alt="后台正在加油~请耐心等待" />
+		<img src="img/koala.jpg" alt="后台正在加油~请耐心等待" />
+		<img src="img/tulips.jpg" alt="后台正在加油~请耐心等待" />
+		<img src="img/penguins.jpg" alt="后台正在加油~请耐心等待" />
+	</body>
+</html>
