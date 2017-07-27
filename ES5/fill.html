@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr = [1,2,3];
+			console.log(arr.fill('小泉泉'));
+			
+			console.log(diyFill(arr, '葛优'));
+			
+			function diyFill(arr, value) {
+				for (var i = 0; i < arr.length; i++) {
+					arr[i] = value;
+				}
+				return arr;
+			}
+			
+			console.log(arr.diyFill('葛优'));
+			
+			Array.prototype.diyFill = function(value) {
+				for (var i = 0; i < this.length; i++) {
+					this[i] =(typeof value) === 'function' ? value() : value;
+				}
+				return this;
+			}
+			console.log(arr.diyFill('敬伟'));
+			console.log(arr.diyFill(function() {
+				return '子浩';
+			}))
+ 		</script>
+	</body>
+</html>

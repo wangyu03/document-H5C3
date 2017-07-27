@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			canvas {
+				border: 1px solid orangered;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="" width="800" height="800"></canvas>
+		
+		<script type="text/javascript">
+			var canvas = document.querySelector('canvas');
+			var ctx = canvas.getContext('2d');
+			
+			var image = new Image();
+			image.src = "images/QQ图片20170726145847.png";
+			image.onload = function() {
+				var top = 0;
+				var step = 0;
+				setInterval(function() {
+					ctx.clearRect(0, 0, 800, 800);
+					
+					step++;
+					if (step > 7) {
+						step = 0
+					}
+					top += 5;
+					ctx.drawImage(image, 79*step, 0, 80, 108, 10, top, 80, 108);
+					
+				},50);
+				
+			}
+			
+			
+		</script>
+	</body>
+</html>

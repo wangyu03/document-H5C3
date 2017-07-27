@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			var arr = [1,2,3];
+			arr.forEach(function(a,b,c) {
+				console.log(a,b,c);
+			});
+			
+			Array.prototype.diyForEach = function(fn) {
+				for (var i = 0; i < this.length; i++) {
+                    //fn(this[i], i, this);  //window对象
+                    //如果想让fn执行时作用域是this，只需要更改作用域就可以了
+                    fn.call(this, this[i], i, this);
+				}
+			}
+			arr.diyForEach(function(value, index, array) {
+//				console.log(this);
+				console.log(value, index, array);
+			})
+		</script>
+	</body>
+</html>

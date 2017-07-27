@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			canvas {
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="600" height="600">
+			你的浏览器不支持canvas ,为了更好的体验，请下载chrom, safari
+			<a href="http://www.baidu.com">chrom</a>
+		</canvas>
+		
+		
+		<script type="text/javascript">
+			//得到画布
+			var canvas = document.getElementById('canvas');
+			//得到上下文
+			var ctx = canvas.getContext('2d');
+			//接下来画东西，都是ctx的方法、数次那个
+			ctx.fillStyle = 'red'; //填充颜色
+			ctx.fillRect(100, 100, 30, 70); //画一个矩形
+			
+			//画笔
+			ctx.strokeStyle = 'blue'; //更好笔触的颜色
+			ctx.lineWidth = "4"; //更改笔触的宽度
+			ctx.strokeRect(100, 200, 200, 200); // 画一个矩形框
+			
+			ctx.beginPath(); //开始绘制路径
+			ctx.moveTo(200, 200); //吧绘制点移动到200,200的位置
+			//位置
+			ctx.lineTo(500, 100);//绘制一条线， 从200,200 - 500,100
+			ctx.lineTo(300, 300);//绘制一条线， 从500,100 - 300,300
+			ctx.closePath(); //闭合路径 。系统会帮我们多绘制一条线 300,300- 200,200
+			
+			ctx.strokeStyle = "green";
+			ctx.lineWidth = "40";
+			ctx.stroke(); //吧刚刚绘制的所有线添加笔触，显示出来
+			ctx.fillStyle = "orange";
+			ctx.fill();//吧刚刚绘制的所有线添加填充色，显示出来
+			
+			
+			ctx.beginPath();
+			ctx.arc(60, 60, 60, 0, 6.3, false);
+			ctx.stroke();
+			ctx.closePath();
+			
+			ctx.font = "40px 微软雅黑";
+			ctx.fillText("不是很懂",0 , 500);
+		   
+		    //画图片
+		    var image = new Image();
+		    image.src = "images/5.jpg";
+		    //当图片加载完成时
+		    image.onload = function() {
+		    	ctx.drawImage(image, 0, 0, 400, 400, 300, 300, 150, 150);
+		    }
+		 
+		</script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr = [1,2,3];
+			var newArr = arr.map(function(v) {
+				return v * v;
+			});
+			console.log(newArr);
+			
+			var newA = map(arr, function(v,index,array) {
+				return v * 5 + index;
+			})
+			console.log(arr);
+//			console.log(map(arr,))
+			function map(arr, fn) {
+				var result = [];
+				for (var i = 0; i < arr.length; i++) {
+					result[i] = fn(arr[i]);
+				}
+				return result;
+			}
+		</script>
+	</body>
+</html>

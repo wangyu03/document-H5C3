@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			var arr = [1, 2, 3, 4, 5, 6, 7];
+			for (let i = 0; i < arr.length; i++) {
+				console.log(arr[i]);
+			}
+			
+			//常量
+			const JINGWEI = '敬伟';
+			console.log(JINGWEI);
+			// JINGWEI = '伟';
+			
+			[1, 2, 3].forEach(function(v) {
+				console.log(this);
+				console.log(v);
+			});
+			
+			[1, 2, 3].forEach( v => console.log(v));
+			[1, 2, 3].forEach( (k, v) => console.log(v,k));
+			[1, 2, 3].forEach( (k, v) => {
+				console.log(v);
+				console.log(k);
+			});
+			
+			var fn = x => x * x;
+			console.log(fn(3));
+			
+			var fn = () => 3;
+//			function fn() {
+//				return 3;
+//			}
+			console.log(fn());
+			
+			var obj = {
+				birth: 1990,
+				getAge: function() {
+					var b = this.birth;
+					//this //obj
+					/*var fn = function() {
+						//this widow
+						console.log(this);return new Date().getFullYear();
+					}*/
+					var fn = () => new Date().getFullYear() - this.birth;
+					return fn();
+				}
+			}
+			console.log(obj.getAge());
+			
+			
+			var {a,b} = {a:"敬伟", b:"小泉泉"};
+			console.log(a,b);
+			function fun() {
+				return {
+					"name": "苏毅"
+				}
+			}
+			var {name} = fun();
+			console.log(name);
+			
+			var [name, age] = ["葛优",20];
+			console.log(name,age);
+			
+			var [m, a, x] ="max";
+			var [m, a, x] =["m","a","x"];
+			console.log(m, a, x);
+			
+			//默认参数
+			function f(name) {
+				name = name || "博栋";
+				console.log(name);
+			}
+			f();
+			f('苏毅');
+			
+			function f(name = '博栋') {
+				console.log(name);
+			}
+			f();
+			f('葛优');
+			
+			function f(a, ...rest) {
+				console.log(a);
+				console.log(rest);
+			}
+			f(1);
+			f(1,2,3);
+			f(3,2,1);
+			
+			var people = ['zf', 'John', 'Sherlock'];
+			
+			function sayHello(people1,people2,people3) {
+				console.log(`hello ${people1},${people2}, ${people3}`)
+			}
+			sayHello(people[0], people[1], people[2]);
+			sayHello.apply(null, people);
+			sayHello(...people);
+		</script>
+	</body>
+</html>

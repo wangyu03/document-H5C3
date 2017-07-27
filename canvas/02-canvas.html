@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		</style>
+	</head>
+	<body>
+		<canvas id="" width="1200" height="800"></canvas>
+		
+		
+		<script type="text/javascript">
+			var canvas = document.querySelector('canvas');
+			var ctx = canvas.getContext('2d');
+			
+			var pointYArr = [120, 100, 140, 130, 150, 190, 100, 100, 300];
+			
+			ctx.beginPath();
+			ctx.moveTo(200, 50);
+			ctx.lineTo(200, 350);
+			ctx.closePath();
+			ctx.strokeStyle = 'blueviolet';
+			ctx.lineWidth = "4";
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.moveTo(200, 350);
+			ctx.lineTo(1100, 350);
+			ctx.closePath();
+			ctx.strokeStyle = 'blueviolet';
+			ctx.lineWidth = "4";
+			ctx.stroke();
+		</script>
+	</body>
+</html>

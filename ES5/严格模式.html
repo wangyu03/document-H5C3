@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			"use strict";
+//			zhangmei = "张美";
+//			console.log(zhangmei);
+			
+			function demo() {
+				console.log(this);
+				console.log(arguments);
+//				var arguments = 1;
+				console.log(arguments);
+			};
+			demo();
+			
+//			var eval = '123';
+			console.log(eval);
+			
+			var age = 18;
+//			delete age;
+			console.log(age);
+			
+			function f() {}
+//			delete f;
+			console.log(f);
+			
+			var obj = {
+				color: "red"
+			};
+			console.log(obj);
+			delete obj.color;
+			console.log(obj);
+			
+			var diyEval = eval;
+			diyEval("var age = 17");
+			console.log(age);
+			
+//			function addNum(num) {
+//				if (num <= 1) {
+//					return num;
+//				}
+////				return num + addNum(num - 1);
+//				return num + arguments.callee(num - 1)
+//			};
+//			console.log(addNum(3));
+			
+			var a = 4;
+			var b = 5;
+			var c = 7;
+			var obj = {c: 6};
+			var o = {c: 7};
+//			with (obj) {
+//				a = a + b + c
+//			};
+			console.log(a, b, obj);
+			
+			
+			var factorialArray = [1, 2, 3, 4, 5].map(function factorial(n) {  
+			    return (n < 2) ? 1 : factorial(n - 1) * n;  
+			});  
+			console.log(factorialArray);  // [1, 2, 6, 24, 120]  
+			
+			
+			
+		</script>
+	</body>
+</html>
